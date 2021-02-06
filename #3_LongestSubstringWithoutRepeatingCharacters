@@ -1,0 +1,21 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s) != 1:
+            substring = list()
+            maxString = 0
+            for character in s:
+                if character in substring:
+                    if len(substring) > maxString:
+                        maxString = len(substring)
+                    
+                    index = substring.index(character)
+                    substring = substring[index+1:]
+                    substring.append(character)
+                else:
+                    substring.append(character)
+                    if len(substring) > maxString:
+                        maxString = len(substring)  
+        else:
+            maxString = 1
+                
+        return maxString
