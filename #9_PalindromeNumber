@@ -1,0 +1,10 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        intList = [str(d) for d in str(x)]
+        intList.reverse()
+        reverseString = "".join(intList)
+        
+        if reverseString == str(x):
+            return True
+        else:
+            return False
